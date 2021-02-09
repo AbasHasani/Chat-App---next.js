@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.message {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+  align-items: center;
+  min-height: 45px;
+  margin-bottom: 0.7em;
+  &__information {
+    margin-left: 1em;;
+    font-size: 0.6em;
+    transform: translate(10px,20px);
+    &__time {
+      margin-right: 5px;
+    }
+  }
+}

@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.container {
+  font-family: "Poppins", sans-serif;
+  max-width: 1028px;
+  min-height: 40em;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 30% auto;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  overflow: hidden;
+  .users {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) rgba(0, 0, 0, 0.25)
+    );
+    backdrop-filter: blur(2rem);
+    &__info {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      // justify-content:center;
+      align-items: center;
+      h1 {
+        display: inline-block;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+        width: 50%;
+        margin-top: 5%;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 250px;
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      &__imagePlaceHolder {
+        width: 100%;
+        height: 200px;
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0)
+        );
+      }
+    }
+    &__list {
+      flex: 1;
+      margin-top: 2%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      height: 10em;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      p {
+        margin: 1.5em 0;
+      }
+    }
+  }
+  .messageContainer {
+    margin: 1.5em 0 0 0em;
+    display: grid;
+    grid-template-rows: 90% auto;
+    // overflow: hidden;
+    &__message {
+      margin-right: 1.5em;
+      margin-left: 1.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 34.6em;
+      overflow: auto;
+      scroll-behavior: smooth;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &__me {
+        display: inline-block;
+        align-self: flex-start;
+        margin-bottom: 1em;
+        border-radius: 10px;
+        position: relative;
+        background: rgba(0, 255, 255, 0.25);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+      }
+      &__others {
+        border-radius: 10px;
+        display: inline-block;
+        align-self: flex-end;
+        margin-bottom: 1em;
+        background: rgba(255, 0, 255, 0.25);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+      }
+    }
+    form {
+      width: 100%;
+      height: 100%;
+      input {
+        width: 100%;
+        height: 100%;
+        padding: 1.2em;
+        border: none;
+        outline: none;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+.anime {
+  animation: MyAnime 0.5s linear;
+}
+@keyframes MyAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: none;
+  z-index: -5;
+  border-radius: 50%;
+}
+.circle1 {
+  top: 8%;
+  left: 20%;
+}
+.circle2 {
+  bottom: 10%;
+  right: 20%;
+}
+.leave {
+  position: absolute;
+  top: 10%;
+  left: 70%;
+  transform: translate(-70%, -20%);
+  padding: 0.8em 1.8em;
+  border: none;
+  background: rgba(0, 0, 0, 0.25);
+  color: white;
+}
+.menu {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    .users {
+      display: flex;
+      flex-direction: row;
+      background: none;
+      border-bottom: 1px solid black;
+      // transform: translateY(-100%);
+      &__info {
+        background: none !important;
+        img {
+          border-radius: 10px;
+          width: 250px;
+        }
+      }
+    }
+    .messageContainer {
+      flex: 1;
+      margin: 0;
+      height: 100vh;
+      &__message {
+        margin: 1em;
+        padding-bottom: 2.5em !important;
+      }
+      form {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 4.5em;
+      }
+    }
+  }
+  .leave {
+    // position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: translate(0, 0);
+    color: #f9f9f9;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .container {
+    .users {
+      width: 400px;
+      height: 100vh;
+      top: 0;
+      left: -100%;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transition: all 0.5s ease;
+      z-index: 1000;
+      padding: 2em;
+      text-align: center;
+    }
+    .messageContainer {
+      margin-top: 2em;
+      &__message {
+        height: 100vh;
+      }
+    }
+  }
+  .leave {
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: translate(0, 0);
+    color: #f9f9f9;
+    cursor: pointer;
+  }
+  .menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.7em 1em;
+    border: none;
+    background: rgba(77, 226, 169, 0.25);
+    color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      color: white;
+      background: rgba(40, 122, 91, 0.25);
+    }
+  }
+  .users.users__open {
+    left: 0%;
+  }
+}
+
+.todo {
+  width: 300px;
+  height: 50px;
+  padding: 1em;
+  text-align: center;
+  background: #f9f9f9;
+  animation: Todo 1.5s ease;
+}
+
+@keyframes Todo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
