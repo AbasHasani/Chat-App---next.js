@@ -128,6 +128,7 @@ input {
             font-size: 15px;
             max-width: 150px;
             border: 1px solid #023535;
+            overflow: hidden;
           }
         }
       }
@@ -162,13 +163,20 @@ input {
 
 @media screen and (max-width: 768px) {
   .container {
-    width: 80%;
-    min-height: 50em;
+    width: 100%;
+    min-height: 100vh;
     grid-template-columns: 100%;
     grid-template-rows: 200px auto;
     border-radius: 10px 10px 0 0 !important;
     .image-holder {
-      object-position: 00px -200px;
+      object-position: 00px -100px;
+    }
+    .form{ 
+      .form-container{
+          input {
+            padding: .2em .3em
+          }
+      }
     }
   }
 }

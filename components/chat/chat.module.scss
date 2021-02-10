@@ -90,7 +90,6 @@
       align-items: flex-start;
       height: 34.6em;
       overflow: auto;
-      scroll-behavior: smooth;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -128,17 +127,6 @@
         font-size: 0.9em;
       }
     }
-  }
-}
-.anime {
-  animation: MyAnime 0.5s linear;
-}
-@keyframes MyAnime {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -183,12 +171,12 @@
     display: flex;
     flex-direction: column;
     border-radius: 0;
+    width: 100%;
     .users {
       display: flex;
       flex-direction: row;
       background: none;
       border-bottom: 1px solid black;
-      // transform: translateY(-100%);
       &__info {
         background: none !important;
         img {
@@ -199,7 +187,7 @@
     }
     .messageContainer {
       flex: 1;
-      margin: 0;
+      margin: 0 0 2em 0;
       height: 100vh;
       &__message {
         margin: 1em;
@@ -215,7 +203,6 @@
     }
   }
   .leave {
-    // position: absolute;
     top: 0;
     right: 0;
     left: auto;
@@ -231,7 +218,7 @@
       width: 400px;
       height: 100vh;
       top: 0;
-      left: -100%;
+      left: -130%;
       position: fixed;
       display: flex;
       flex-direction: column;
@@ -244,9 +231,17 @@
     }
     .messageContainer {
       margin-top: 2em;
+      margin-bottom: 7em;
+      width: 100%;
+      height: 90vh;
+      margin-bottom: auto;
       &__message {
+        margin-bottom: 2em;
         height: 100vh;
       }
+    }
+    form {
+      // display: a;
     }
   }
   .leave {
@@ -275,23 +270,5 @@
   }
   .users.users__open {
     left: 0%;
-  }
-}
-
-.todo {
-  width: 300px;
-  height: 50px;
-  padding: 1em;
-  text-align: center;
-  background: #f9f9f9;
-  animation: Todo 1.5s ease;
-}
-
-@keyframes Todo {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

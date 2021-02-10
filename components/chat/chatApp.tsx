@@ -50,7 +50,6 @@ const ChatApp: FC<Props> = ({ params }) => {
   }, [ENDPOINT, params]);
   useEffect(() => {
     socket.on("get users", ({ room, users }) => {
-      console.log(users);
       
       let roomUsers = [];
       setMyRoom(room.replace("_", " "));
@@ -111,9 +110,9 @@ const ChatApp: FC<Props> = ({ params }) => {
             className={styles.messageContainer__message}
             ref={chatMessagesRef}
           >
-            {chatMessages.map((message) => (
+            {chatMessages.map((message, i) => (
               <div
-                key={message.message}
+                key={i}
                 className={
                   message.username === params.name
                     ? styles.messageContainer__message__me
